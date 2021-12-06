@@ -49,7 +49,10 @@ public class Solution {
         if (lists == null || lists.length == 0) {
             return null;
         }
+        // 时间复杂度为 TODO O(nlog n) :  分治相当于是变成二叉树结构的合并子树到,
+        // https://leetcode-cn.com/problems/merge-k-sorted-lists/solution/he-bing-kge-pai-xu-lian-biao-by-leetcode-solutio-2/
         return mergeKLists(lists, 0, lists.length - 1);
+        // 时间复杂度为 O(n*n) 每次merge2Lists为O(n), for循环也是O(n)
 //        ListNode temp = lists[0];
 //        for(int i = 1; i < lists.length; i++) {
 //            temp = merge2Lists(temp, lists[i]);

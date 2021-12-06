@@ -66,7 +66,7 @@ public class Solution {
 
     }
 
-    private ListNode mockNode(int headVal, int nodeCount) {
+    public static ListNode mockNode(int headVal, int nodeCount) {
         ListNode head = new ListNode(headVal);
         ListNode end = head;
         Random random = new Random();

@@ -14,16 +14,13 @@ public class ListNode {
     public ListNode(int val) {
         this.val = val;
     }
-    public ListNode(int val, ListNode node) {
+    public ListNode(int val, ListNode nextNode) {
         this.val = val;
-        this.next = node;
+        this.next = nextNode;
     }
 
     @Override
     public String toString() {
-        return "{" +
-                "val=" + val +
-                ", next=" + next +
-                '}';
+        return val + " -> " + next;
     }
 }
