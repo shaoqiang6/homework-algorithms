@@ -1,6 +1,7 @@
 package evaluateReversePolishNotation;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * 150. 逆波兰表达式求值
@@ -59,8 +60,9 @@ import java.util.Stack;
  * 适合用栈操作运算：遇到数字则入栈；遇到算符则取出栈顶两个数字进行计算，并将结果压入栈中。
  */
 public class Solution {
-    Stack<Integer> stack = new Stack<>();
+
     public int evalRPN(String[] tokens) {
+        Deque<Integer> stack = new LinkedList<>();
         for (String token : tokens) {
             if (isOps(token)) {
                 // stack先进后出, 先出来的是第二个数字 y
