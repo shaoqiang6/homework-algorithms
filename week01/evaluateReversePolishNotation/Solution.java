@@ -63,6 +63,7 @@ public class Solution {
     public int evalRPN(String[] tokens) {
         for (String token : tokens) {
             if (isOps(token)) {
+                // stack先进后出, 先出来的是第二个数字 y
                 Integer y = stack.pop();
                 Integer x = stack.pop();
                 Integer z = ops(x, y, token);
@@ -76,20 +77,21 @@ public class Solution {
     private boolean isOps(String token) {
         return "+".equals(token) || "-".equals(token) || "*".equals(token) || "/".equals(token);
     }
+
     private Integer ops(Integer x, Integer y, String token) {
-        if ("+".equals(token)) {
-            return x + y;
+        switch (token) {
+            case "+":
+                return x + y;
+            case "-":
+                return x - y;
+            case "*":
+                return x * y;
+
+            case "/":
+                return x / y;
+            default:
+                return  0;
         }
-        if ("-".equals(token)) {
-            return x - y;
-        }
-        if ("*".equals(token)) {
-            return x * y;
-        }
-        if ("/".equals(token)) {
-            return x / y;
-        }
-        return 0;
     }
 
 
