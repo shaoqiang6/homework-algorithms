@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;
-import java.util.Random;
 
 /**
  * 23. 合并K个升序链表
@@ -52,10 +51,10 @@ import java.util.Random;
 public class SolutionUsePriorityQueue {
 
     public ListNode mergeKLists(ListNode[] lists) {
-        PriorityQueue<Status> queue = new PriorityQueue<>();
+        PriorityQueue<NodeSort> queue = new PriorityQueue<>();
         for(ListNode node : lists) {
             if (null != node) {
-                queue.offer(new Status(node));
+                queue.offer(new NodeSort(node));
             }
         }
         ListNode head = new ListNode(-1);
@@ -63,7 +62,7 @@ public class SolutionUsePriorityQueue {
         ListNode tail = head;
         while (!queue.isEmpty()) {
             // poll出最小val的节点
-            Status poll = queue.poll();
+            NodeSort poll = queue.poll();
             // 更新尾部节点
             tail.next = poll.node;
             // 移动尾部节点
@@ -71,7 +70,7 @@ public class SolutionUsePriorityQueue {
             // 如果优先级队列中的这个节点还有next,则将next放到队列中去排队
             if (null != poll.node.next) {
                 // 每次offer时间复杂度?
-                queue.offer(new Status(poll.node.next));
+                queue.offer(new NodeSort(poll.node.next));
             }
         }
         return head.next;
@@ -93,7 +92,7 @@ public class SolutionUsePriorityQueue {
     /**
      * 用来将多个子链表排序, 排序规则就是val正序
      */
-    private class Status implements Comparable<Status> {
+    private static class NodeSort implements Comparable<NodeSort> {
         /**
          * 头结点的val
          */
@@ -102,13 +101,13 @@ public class SolutionUsePriorityQueue {
          * 子链表
          */
         ListNode node;
-        public Status(ListNode node) {
+        public NodeSort(ListNode node) {
             val= node.val;
             this.node = node;
         }
 
         @Override
-        public int compareTo(Status status2) {
+        public int compareTo(NodeSort status2) {
             return this.val - status2.val;
         }
     }
