@@ -27,7 +27,14 @@ package climbingStairs0070;
  * @author shaoqiangyan
  */
 public class Solution {
+
     public int climbStairs(int n) {
-        return 0;
+        int  p = 0, q = 0,ans = 1;
+        for(int i = 1; i <= n; i++) {
+            p = q;
+            q = ans;
+            ans = p + q;
+        }
+        return ans;
     }
 }
