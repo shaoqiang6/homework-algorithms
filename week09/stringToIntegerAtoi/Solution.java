@@ -115,8 +115,11 @@ public class Solution {
         int ans = 0;
         while (i < n && s.charAt(i) >= '0' && s.charAt(i) <= '9') {
             if (ans > (2147483647 - (s.charAt(i) - '0')) / 10) {
-                if (sign == 1) return 2147483647;
-                else return -2147483648;
+                if (sign == 1) {
+                    return 2147483647;
+                } else {
+                    return -2147483648;
+                }
             }
             ans = ans * 10 + (s.charAt(i) - '0');
             i++;
