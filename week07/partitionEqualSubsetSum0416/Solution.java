@@ -49,9 +49,9 @@ public class Solution {
         for (int i = 1; i <= n; i++) {
             for (int j = targetSum; j >= nums2[i]; j--) {
                 f[j] |= f[j - nums2[i]];
-            }
-            if (f[targetSum]) {
-                return true;
+                if (f[targetSum]) {
+                    return true;
+                }
             }
 //            System.out.println(i + ";  " + Arrays.toString(f));
         }
