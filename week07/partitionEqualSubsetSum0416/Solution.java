@@ -2,6 +2,8 @@ package partitionEqualSubsetSum0416;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
  * 416. 分割等和子集
  * 给你一个 只包含正整数 的 非空 数组 nums 。请你判断是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。
@@ -48,6 +50,10 @@ public class Solution {
             for (int j = targetSum; j >= nums2[i]; j--) {
                 f[j] |= f[j - nums2[i]];
             }
+            if (f[targetSum]) {
+                return true;
+            }
+//            System.out.println(i + ";  " + Arrays.toString(f));
         }
         return f[targetSum];
 
@@ -55,7 +61,7 @@ public class Solution {
 
     @Test
     public void test() {
-        int[] things = new int[]{10,40,100,50};
+        int[] things = new int[]{100,10,40,50};
         boolean b = canPartition(things);
         System.out.println(b);
 
