@@ -1,14 +1,14 @@
 .idea
-*/.idea/*
 *.iml
 *.ipr
 *.iws
-out/
+out
 *.factorypath
 
 # Eclipse Project files
 .classpath
 .project
+.settings/
 
 # netbeans ignore
 nbproject/
@@ -36,4 +36,3 @@ mac-logs/
 
 rebel.xml
 rebel-remote.xml
-/sonarlint/issuestore/1/e/1e734d053bf1af3274ecf812dbddc46503df9373
