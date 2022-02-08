@@ -1,9 +1,10 @@
-package mergeTwoSortedLists;
+package mergeTwoSortedLists0021;
 
 import org.junit.Test;
+import utils.ListNode;
 
-import java.util.Random;
 /**
+ * 21. 合并两个有序链表
  * 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
  *
  *         示例 1：
@@ -57,24 +58,14 @@ public class Solution {
 
     @Test
     public void test() {
-        ListNode listNode1 = mockNode(2, 1);
+        ListNode listNode1 = ListNode.mockSortedNode(2, 1);
         System.out.println(listNode1);
-        ListNode listNode2 = mockNode(1, 2);
+        ListNode listNode2 = ListNode.mockSortedNode(1, 2);
         System.out.println(listNode2);
         ListNode listNode = mergeTwoLists(listNode1, listNode2);
         System.out.println(listNode);
 
     }
 
-    public static ListNode mockNode(int headVal, int nodeCount) {
-        ListNode head = new ListNode(headVal);
-        ListNode end = head;
-        Random random = new Random();
-        for (int i = 0;i< nodeCount; i++) {
-            int incr = i + Math.abs(random.nextInt()) % 3 + 1;
-            end.next = new ListNode(end.val + incr);
-            end = end.next;
-        }
-        return head;
-    }
+
 }
