@@ -17,7 +17,9 @@ public class MinimalPath {
     private static Character start = 's';
 
     private Map<Character, Map<Character, Integer>> graph;
+    // 记录到达每个节点的花费时间,
     private Map<Character, Integer> costMap = new HashMap<>();
+    // 记录最终路线
     private Map<Character, Character> parent = new HashMap<>();
     private Set<Character> visited = new HashSet<>();
 
