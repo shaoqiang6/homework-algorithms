@@ -35,7 +35,7 @@ public class NQueue {
             if (isOk(row, column)) {
                 result[row] = column;
                 calNQueue(row + 1);
-                // todo 为什么要这样做?
+                // 为什么要这样做?  因为result是全局变量, 前两行设置变量之后, 会影响后面的判断,需要还原
                 result[row] = -1;
 
             }
