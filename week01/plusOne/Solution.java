@@ -2,7 +2,10 @@ package plusOne;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
+ * 66. 加一
  * 给定一个由 整数 组成的 非空 数组所表示的非负整数，在该数的基础上加一。
  *
  * 最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。
@@ -43,21 +46,16 @@ public class Solution {
         int length = digits.length;
         for (int i = length - 1; i>=0; i--) {
             if (digits[i] <9) {
+                // OK,成功+1, 直接 return 结果
                 digits[i] = digits[i] + 1;
-                break;
+                return digits;
             }
             digits[i] = 0;
         }
-        if (digits[0] == 0) {
-            int [] res = new int[length + 1];
-            res[0] = 1;
-            for (int i = 0; i < length; i++) {
-                res[i+1] = digits[i];
-            }
-//            System.arraycopy(digits, 0, res, 1, digits.length - 1);
-            return res;
-        }
-        return digits;
+        int [] res = new int[length + 1];
+        // 只有第一位为1,其他位置都是 int 默认值 0
+        res[0] = 1;
+        return res;
     }
 
 
@@ -65,10 +63,8 @@ public class Solution {
 
     @Test
     public void test() {
-        int nums[] = new int[]{9,9,9};
+        int []nums = new int[]{9,9,9};
         int[] ints = plusOne(nums);
-        for (int i =0;i<ints.length;i++) {
-            System.out.print(ints[i]);
-        }
+        System.out.println(Arrays.toString(ints));
     }
 }
