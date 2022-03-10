@@ -1,7 +1,6 @@
 package mergeKSortedLists;
 
-import mergeTwoSortedLists.ListNode;
-import mergeTwoSortedLists.Solution;
+import utils.ListNode;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -79,9 +78,9 @@ public class SolutionUsePriorityQueue {
 
     @Test
     public void test() {
-        ListNode listNode1 = Solution.mockNode(2, 1);
+        ListNode listNode1 = ListNode.mockSortedNode(2, 1);
         System.out.println(listNode1);
-        ListNode listNode2 = Solution.mockNode(1, 2);
+        ListNode listNode2 = ListNode.mockSortedNode(1, 2);
         System.out.println(listNode2);
         ListNode listNode = mergeKLists(Arrays.asList(listNode1, listNode2).toArray(new ListNode[]{}));
         System.out.println(listNode);
