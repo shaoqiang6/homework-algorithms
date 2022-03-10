@@ -33,14 +33,23 @@ public class ListNode {
      * @return 升序链表
      */
     public static ListNode mockSortedNode(int headVal, int nodeCount) {
+        return mockSortedNode(headVal, nodeCount, false);
+    }
+
+    public static ListNode mockSortedNode(int headVal, int nodeCount, boolean useRandom) {
         ListNode head = new ListNode(headVal);
         ListNode end = head;
-        Random random = new Random();
-        for (int i = 0;i< nodeCount - 1; i++) {
-            int incr = i + Math.abs(random.nextInt()) % 3 + 1;
+
+        for (int i = 0; i< nodeCount - 1; i++) {
+            int incr = getIncr(i, useRandom);
             end.next = new ListNode(end.val + incr);
             end = end.next;
         }
         return head;
+    }
+
+    private static int getIncr(int i, boolean useRandom) {
+        Random random = new Random();
+        return useRandom ? (i + Math.abs(random.nextInt()) % 3 + 1) : 2;
     }
 }
