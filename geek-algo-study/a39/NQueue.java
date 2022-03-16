@@ -26,6 +26,7 @@ public class NQueue {
 
 
     public void calNQueue(int row) {
+        // 说明 0~n-1 都可以正常放置一个queue, 方案可行, 记录
         if (row == n) {
             print();
             System.out.println(Arrays.toString(result));
@@ -49,7 +50,7 @@ public class NQueue {
         int leftLow = column - 1;
         int rightUp = column + 1;
         for (int i = row - 1; i >= 0; i--) {
-            // 说明之前有一行,的当前列上已经放了queue
+            // 说明之前有一行,的当前列上已经放了queue  12点钟(竖直)方向
             if (column == result[i]) {
                 return false;
             }
@@ -57,6 +58,7 @@ public class NQueue {
             if (leftLow >= 0 && leftLow == result[i]) {
                 return false;
             }
+            // 右上角存在Queen
             if (rightUp < n && rightUp == result[i]) {
                 return false;
             }
