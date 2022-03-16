@@ -1,6 +1,6 @@
 package mergeKSortedLists;
 
-import mergeTwoSortedLists.ListNode;
+import utils.ListNode;
 
 /**
  * 23. 合并K个升序链表
@@ -76,7 +76,7 @@ public class Solution {
 
 
     public ListNode merge2Lists(ListNode node1, ListNode node2) {
-        mergeTwoSortedLists.Solution s = new mergeTwoSortedLists.Solution();
+        mergeTwoSortedLists0021.Solution s = new mergeTwoSortedLists0021.Solution();
         return s.mergeTwoLists(node1, node2);
 
     }
