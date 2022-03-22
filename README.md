@@ -2,11 +2,51 @@
 
 ## week01 数组、栈、链表、队列
 
+[20. 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/) stack
 
+[394. 字符串解码](https://leetcode-cn.com/problems/decode-string/)  stack
 
+[88. 合并有序数组](https://leetcode-cn.com/problems/merge-sorted-array/) 数组
 
+#### [66. 加一](https://leetcode-cn.com/problems/plus-one/)
+
+#### [21. 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
+
+[641. 设计循环双端队列](https://leetcode-cn.com/problems/design-circular-deque/)
+
+[85. 最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/)
+
+[88. 合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/)
+
+#### [26. 删除有序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
+
+#### [84. 柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)
+
+#### [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/)
 
 ## week02  哈希表、集合、映射、前缀和、查分、双指针扫描
+
+#### [811. 子域名访问计数](https://leetcode-cn.com/problems/subdomain-visit-count/) map
+
+#### [697. 数组的度](https://leetcode-cn.com/problems/degree-of-an-array/) map
+
+#### [1074. 元素和为目标值的子矩阵数量](https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/) 前缀和
+
+#### [560. 和为 K 的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/)  前缀和
+
+#### [874. 模拟行走机器人](https://leetcode-cn.com/problems/walking-robot-simulation/)
+
+- 方向数组
+
+- set 记录所有障碍物
+
+#### [49. 字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/)
+
+- map
+
+
+
+
 
 ## week03 递归、分支、树、图
 
@@ -108,7 +148,5 @@ public int binarySearch(int[] nums, int target) {
 ## week09 字符串处理、高级搜索
 
 ## week10 平衡二叉树、跳表、实战技巧、树状数组与线段树
-
-
 
 ## 刷题路径
