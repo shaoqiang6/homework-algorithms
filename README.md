@@ -44,13 +44,55 @@
 
 - map
 
-
-
-
-
 ## week03 递归、分支、树、图
 
+#### [23. 合并K个升序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/)  归并
+
+#### [47. 全排列 II](https://leetcode-cn.com/problems/permutations-ii/)
+
+- 递归，
+
+- 数组sort，used[]
+
+#### [106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
+
+#### [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+
+#### [210. 课程表 II](https://leetcode-cn.com/problems/course-schedule-ii/)
+
+#### [684. 冗余连接](https://leetcode-cn.com/problems/redundant-connection/)
+
+#### [685. 冗余连接 II](https://leetcode-cn.com/problems/redundant-connection-ii/)
+
+
+
+#### 树、二叉树、树的遍历
+
+#### [589. N 叉树的前序遍历](https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/)
+
+#### [297. 二叉树的序列化与反序列化](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/)
+
+- [x]  todo 0328
+
+
+
+#### [236. 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)
+
+
+
+
+
+
+
 ## week04 深度优先搜索、广度优先搜索、二叉堆、二叉搜索树
+
+#### [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/)
+
+#### [538. 把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/)
+
+层序逆序遍历 右、root、左
+
+
 
 ## week05 二分、排序
 
