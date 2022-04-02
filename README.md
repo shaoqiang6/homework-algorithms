@@ -64,25 +64,15 @@
 
 #### [685. 冗余连接 II](https://leetcode-cn.com/problems/redundant-connection-ii/)
 
-
-
 #### 树、二叉树、树的遍历
 
 #### [589. N 叉树的前序遍历](https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/)
 
 #### [297. 二叉树的序列化与反序列化](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/)
 
-- [x]  todo 0328
-
-
+- [x] todo 0328
 
 #### [236. 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)
-
-
-
-
-
-
 
 ## week04 深度优先搜索、广度优先搜索、二叉堆、二叉搜索树
 
@@ -91,8 +81,6 @@
 #### [538. 把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/)
 
 层序逆序遍历 右、root、左
-
-
 
 ## week05 二分、排序
 
@@ -188,6 +176,22 @@ public int binarySearch(int[] nums, int target) {
 ## week08 字典树、并查集、图论算法
 
 ## week09 字符串处理、高级搜索
+
+#### [8. 字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/)
+
+跟着题目要求一步一步写
+
+最大最小值比较是注意越界，使用减法代替加法、除法代替乘法
+
+#### [387. 字符串中的第一个唯一字符](https://leetcode-cn.com/problems/first-unique-character-in-a-string/)
+
+map存储每个字符的出现次数，循环字符串找出出现次数为1
+
+#### [14. 最长公共前缀](https://leetcode-cn.com/problems/longest-common-prefix/)
+
+两两求最长前缀
+
+
 
 ## week10 平衡二叉树、跳表、实战技巧、树状数组与线段树
 
