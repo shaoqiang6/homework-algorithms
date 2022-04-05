@@ -30,9 +30,26 @@
 
 #### [697. 数组的度](https://leetcode-cn.com/problems/degree-of-an-array/) map
 
-#### [1074. 元素和为目标值的子矩阵数量](https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/) 前缀和
+#### [1074. 元素和为目标值的子矩阵数量](https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/)
 
-#### [560. 和为 K 的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/)  前缀和
+- 前缀和
+
+- 两数之和
+
+#### [560. 和为 K 的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/)
+
+前缀和(与1074类似)
+
+```java
+// 前缀和数组
+// s[0] = 0; s[1] = s[0] + nums[0]int s[] = new int[n+1];
+s[0] = 0;
+for (int i = 1; i < s.length; i++) {
+    s[i] = s[i - 1] + nums[i - 1];
+}
+```
+
+
 
 #### [874. 模拟行走机器人](https://leetcode-cn.com/problems/walking-robot-simulation/)
 
@@ -43,6 +60,54 @@
 #### [49. 字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/)
 
 - map
+
+#### [30. 串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/)
+
+
+
+#### [30. 串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/)
+
+- 两个map，一个放数组存在单词和对应的数量，一个存放从字符串中找到的数组的单词数量
+
+```java
+class Solution {
+    public List<Integer> findSubstring(String s, String[] words) {
+        Map<String, Integer> map = new HashMap<>();
+        for (String ss : words) {
+            map.put(ss, map.getOrDefault(ss, 0) + 1);
+        }
+        List<Integer> ans = new ArrayList<>();
+        int n = s.length();
+        int len = words[0].length();
+        int num = words.length;
+        for (int i = 0; i < n - (len * num) + 1; i++) {
+            Map<String, Integer> seen = new HashMap<>();
+            // 第几个单词, 一个一个匹配
+            int j = 0;
+            while (j < num) {
+                String word = s.substring(i + j * len, i + len + j * len);
+                if (map.containsKey(word)) {
+                    seen.put(word, seen.getOrDefault(word, 0) + 1);
+                    if (seen.getOrDefault(word, 0) > map.getOrDefault(word, 0)) {
+                        break;       
+                    }
+                    j++;
+                } else {
+                    break;
+                }
+            }
+            if (j == num) {
+                ans.add(i);
+            }
+        }
+        return  ans;
+    }
+}
+```
+
+
+
+
 
 ## week03 递归、分支、树、图
 
@@ -190,6 +255,8 @@ map存储每个字符的出现次数，循环字符串找出出现次数为1
 #### [14. 最长公共前缀](https://leetcode-cn.com/problems/longest-common-prefix/)
 
 两两求最长前缀
+
+#### [344. 反转字符串](https://leetcode-cn.com/problems/reverse-string/)
 
 
 
