@@ -238,7 +238,7 @@ class Solution {
 
 [297. 二叉树的序列化与反序列化](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/)
 
-- [x] todo 0328
+- [ ] todo 0328
 
 [236. 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 
@@ -246,13 +246,39 @@ class Solution {
 
 [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/)
 
+> 求矩阵中被'X'围绕的区域
+> 
+> 1. 对区域的四条边进行深度优先遍历，将 'O' 染色为 'A';
+> 
+> 2. 遍历整个矩阵，修改 'O' -> 'X', 'A'->'O'
+
 [538. 把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/)
 
 层序逆序遍历 右、root、左
 
-## week05 二分、排序
+[355. 设计推特](https://leetcode-cn.com/problems/design-twitter/)
 
-## search 05
+- [x] todo 
+
+[17. 电话号码的字母组合](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/)
+
+#### [51. N 皇后](https://leetcode-cn.com/problems/n-queens/)
+
+
+
+#### [200. 岛屿数量](https://leetcode-cn.com/problems/number-of-islands/)
+
+> 二维矩阵深度优先遍历，发现一个陆地就针对他进行深度遍历（使用方向数组），期间需要对访问过的点进行标记为已读 `visited[][]` 
+
+
+
+#### [433. 最小基因变化](https://leetcode-cn.com/problems/minimum-genetic-mutation/)
+
+> 中等
+> 
+> 层序遍历，改其中一个char然后看基因库是否存在，存在&& 没有访问过就加入层序的队列
+
+## week05 二分、排序
 
 ### 二分查找
 
