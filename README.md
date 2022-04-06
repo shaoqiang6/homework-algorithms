@@ -8,9 +8,9 @@
 
 [88. 合并有序数组](https://leetcode-cn.com/problems/merge-sorted-array/) 数组
 
-#### [66. 加一](https://leetcode-cn.com/problems/plus-one/)
+[66. 加一](https://leetcode-cn.com/problems/plus-one/)
 
-#### [21. 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
+[21. 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
 
 [641. 设计循环双端队列](https://leetcode-cn.com/problems/design-circular-deque/)
 
@@ -18,25 +18,25 @@
 
 [88. 合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/)
 
-#### [26. 删除有序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
+[26. 删除有序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
 
-#### [84. 柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)
+[84. 柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)
 
-#### [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/)
+[42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/)
 
 ## week02  哈希表、集合、映射、前缀和、查分、双指针扫描
 
-#### [811. 子域名访问计数](https://leetcode-cn.com/problems/subdomain-visit-count/) map
+[811. 子域名访问计数](https://leetcode-cn.com/problems/subdomain-visit-count/) map
 
-#### [697. 数组的度](https://leetcode-cn.com/problems/degree-of-an-array/) map
+[697. 数组的度](https://leetcode-cn.com/problems/degree-of-an-array/) map
 
-#### [1074. 元素和为目标值的子矩阵数量](https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/)
+[1074. 元素和为目标值的子矩阵数量](https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/)
 
 - 前缀和
 
 - 两数之和
 
-#### [560. 和为 K 的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/)
+[560. 和为 K 的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/)
 
 前缀和(与1074类似)
 
@@ -49,23 +49,19 @@ for (int i = 1; i < s.length; i++) {
 }
 ```
 
-
-
-#### [874. 模拟行走机器人](https://leetcode-cn.com/problems/walking-robot-simulation/)
+[874. 模拟行走机器人](https://leetcode-cn.com/problems/walking-robot-simulation/)
 
 - 方向数组
 
 - set 记录所有障碍物
 
-#### [49. 字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/)
+[49. 字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/)
 
 - map
 
-#### [30. 串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/)
+[30. 串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/)
 
-
-
-#### [30. 串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/)
+[30. 串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/)
 
 - 两个map，一个放数组存在单词和对应的数量，一个存放从字符串中找到的数组的单词数量
 
@@ -105,45 +101,152 @@ class Solution {
 }
 ```
 
-
-
-
-
 ## week03 递归、分支、树、图
 
-#### [23. 合并K个升序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/)  归并
+[23. 合并K个升序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/)  归并
 
-#### [47. 全排列 II](https://leetcode-cn.com/problems/permutations-ii/)
+[47. 全排列 II](https://leetcode-cn.com/problems/permutations-ii/)
 
 - 递归，
 
-- 数组sort，used[]
+- 数组sort：在判断是否与前一个元素重复时使用，
 
-#### [106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
+- used[] 用来记录数组的某一个元素是否使用过
 
-#### [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+```java
+class Solution {
+    List<List<Integer>> ans = new ArrayList<>();
+    List<Integer> a = new ArrayList<>();
+    boolean[] used = null;
+    int n = 0;
+    public List<List<Integer>> permuteUnique(int[] nums) {
+        n = nums.length;
+        used = new boolean[n];
+        Arrays.sort(nums);
+        recur(nums, 0);
+        return ans;
+    }
 
-#### [210. 课程表 II](https://leetcode-cn.com/problems/course-schedule-ii/)
+    private void recur(int[] nums, int pos) {
+        if (pos == n) {
+            ans.add(new ArrayList<>(a));
+            return;
+        }
+        for (int i = 0; i < n; i++) {
+            // 当前预算元素已经使用过或者上一个元素相等并且没有访问过
+            if(used[i] || (i > 0 && nums[i] == nums[i - 1] && !used[i - 1])) {
+                continue;
+            }
+            a.add(nums[i]);
+            used[i] = true;
+            // 找下一个位置对应的元素
+            recur(nums, pos + 1);
+            // 还原全局信息
+            used[i] = false;
+            a.remove(a.size() - 1);
 
-#### [684. 冗余连接](https://leetcode-cn.com/problems/redundant-connection/)
+        }
+    }
 
-#### [685. 冗余连接 II](https://leetcode-cn.com/problems/redundant-connection-ii/)
+}
+```
 
-#### 树、二叉树、树的遍历
+[106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
 
-#### [589. N 叉树的前序遍历](https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/)
+[105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
 
-#### [297. 二叉树的序列化与反序列化](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/)
+[207. 课程表](https://leetcode-cn.com/problems/course-schedule/)
+
+> a课程依赖b课程，标识b到a可到达即为有向图；to数组
+> 
+> 1. 构建这个图；
+> 
+> 2. 构建每门课程的度；
+> 
+> 3. 找到度为0的一个课程，从他开始进行广度优先遍历（使用 while(!queue.isEmpty())），每学完一门课将他的度减一，如果度为0代表这门课没有依赖其他的课程了，可以直接学习。。。
+
+[210. 课程表 II](https://leetcode-cn.com/problems/course-schedule-ii/)
+
+[684. 冗余连接](https://leetcode-cn.com/problems/redundant-connection/)
+
+求环，无向图的构建遍历
+
+出边数组：
+
+`List<List<Integer>> to = new ArrayList<>(n + 1)`  
+
+```java
+class Solution {
+    /**
+     * 总节点数 
+     */
+    int n = 0;
+    List<List<Integer>> to;
+    boolean[] visited = null;
+    boolean hasCycle = false;
+
+    public int[] findRedundantConnection(int[][] edges) {
+        // 求n的值
+        for (int [] edge : edges) {
+            int x = edge[0];
+            int y = edge[1];
+            n = Math.max(n, Math.max(x, y));
+        }
+
+        visited = new boolean[n + 1];
+        to = new ArrayList<>(n + 1);
+        for (int i = 0; i <= n; i++) {
+            to.add( new ArrayList<>());
+        }
+
+        for (int [] edge : edges) {
+            hasCycle = false;
+            int x = edge[0];
+            int y = edge[1];
+            // 出边数组构建
+            to.get(x).add(y);
+            to.get(y).add(x);
+            visited[x] = true;
+            dfs(x, 0);
+        visited[x] = false;
+            if (hasCycle) {
+                return edge;
+            }
+        }
+        return new int[0];
+    }
+    /**
+    图的深度优先遍历找环
+     */
+    private void dfs(int x, int fa) {
+        // 出边数组访问 x能到周围点的方法
+        for (int y : to.get(x)) {
+            if(y == fa) continue;
+            if (!visited[y]) dfs(y, x);
+            else hasCycle = true;
+        }
+
+    }
+}
+```
+
+[685. 冗余连接 II](https://leetcode-cn.com/problems/redundant-connection-ii/)
+
+树、二叉树、树的遍历
+
+[589. N 叉树的前序遍历](https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/)
+
+[297. 二叉树的序列化与反序列化](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/)
 
 - [x] todo 0328
 
-#### [236. 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)
+[236. 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 
 ## week04 深度优先搜索、广度优先搜索、二叉堆、二叉搜索树
 
-#### [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/)
+[130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/)
 
-#### [538. 把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/)
+[538. 把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/)
 
 层序逆序遍历 右、root、左
 
@@ -242,23 +345,21 @@ public int binarySearch(int[] nums, int target) {
 
 ## week09 字符串处理、高级搜索
 
-#### [8. 字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/)
+[8. 字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/)
 
 跟着题目要求一步一步写
 
 最大最小值比较是注意越界，使用减法代替加法、除法代替乘法
 
-#### [387. 字符串中的第一个唯一字符](https://leetcode-cn.com/problems/first-unique-character-in-a-string/)
+[387. 字符串中的第一个唯一字符](https://leetcode-cn.com/problems/first-unique-character-in-a-string/)
 
 map存储每个字符的出现次数，循环字符串找出出现次数为1
 
-#### [14. 最长公共前缀](https://leetcode-cn.com/problems/longest-common-prefix/)
+[14. 最长公共前缀](https://leetcode-cn.com/problems/longest-common-prefix/)
 
 两两求最长前缀
 
-#### [344. 反转字符串](https://leetcode-cn.com/problems/reverse-string/)
-
-
+[344. 反转字符串](https://leetcode-cn.com/problems/reverse-string/)
 
 ## week10 平衡二叉树、跳表、实战技巧、树状数组与线段树
 
