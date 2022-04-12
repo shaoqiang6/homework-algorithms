@@ -103,7 +103,13 @@ class Solution {
 
 ## week03 递归、分支、树、图
 
-[23. 合并K个升序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/)  归并
+[23. 合并K个升序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/)  
+
+- 解法一：归并
+
+- 使用优先级队列
+
+- 自己实现二叉堆，提到优先级队列
 
 [47. 全排列 II](https://leetcode-cn.com/problems/permutations-ii/)
 
@@ -264,13 +270,9 @@ class Solution {
 
 #### [51. N 皇后](https://leetcode-cn.com/problems/n-queens/)
 
-
-
 #### [200. 岛屿数量](https://leetcode-cn.com/problems/number-of-islands/)
 
 > 二维矩阵深度优先遍历，发现一个陆地就针对他进行深度遍历（使用方向数组），期间需要对访问过的点进行标记为已读 `visited[][]` 
-
-
 
 #### [433. 最小基因变化](https://leetcode-cn.com/problems/minimum-genetic-mutation/)
 
@@ -361,9 +363,121 @@ public int binarySearch(int[] nums, int target) {
 | [162. 寻找峰值](https://leetcode-cn.com/problems/find-peak-element/) |     |
 |                                                                  |     |
 
-### sort
+#### [1011. 在 D 天内送达包裹的能力](https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/)
+
+> - 题目需要找出在 D 天内运完包裹**最小载重量**
+> 
+> - 货物需要按照顺序搬运，可以使用二分查找  `maxWeight` 即 `left` ；   `sumWeight` 即right；每次判断 `(left + right) / 2` 是否可以满足答案
+
+#### [875. 爱吃香蕉的珂珂](https://leetcode-cn.com/problems/koko-eating-bananas/)
+
+> 类似 1011题
+
+#### [327. 区间和的个数](https://leetcode-cn.com/problems/count-of-range-sum/)
+
+线段树
+
+excalldraw.com
+
+#### [911. 在线选举](https://leetcode-cn.com/problems/online-election/)
 
 ## week06 贪心、动规1
+
+#### [70. 爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)
+
+> 1. 递归解法：
+>    
+>    1. 递推公式： f(n) = f(n - 1) + f(n -2); // 到达终点的走法 = 走到上一个台阶的走法+ 走到上上个台阶的走法总数
+> 
+> 2. 动态规划
+
+```java
+// 1.1. 最朴素的递归
+class Solution {
+    public int climbStairs(int n) {
+        return recursion(n);
+    }
+
+    private int recursion(int n) {
+        if (n == 1) return 1;
+        if (n == 2) return 2;
+        return recursion(n - 2) + recursion(n - 1);
+    }
+}
+
+
+```
+
+
+
+```java
+// 1.2.记忆化搜索
+class Solution {
+    int[] mem = null;
+    public int climbStairs(int n) {
+        mem = new int[n + 1];
+        return recursion(n);
+    }
+
+    private int recursion(int n) {
+        if (n == 1) return 1;
+        if (n == 2) return 2;
+        if (mem[n] > 0) return mem[n];
+        int res = recursion(n - 2) + recursion(n - 1);
+        mem[n] = res;
+        return res;
+    }
+}
+```
+
+
+
+```java
+class Solution {
+    int [] dp = null;
+    public int climbStairs(int n) {
+        dp = new int[n + 1];
+        return recursion(n);
+    }
+
+    private int recursion(int n) {
+        dp[0] = 1;
+        dp[1] = 2;
+        for (int i = 2; i < n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+        return dp[n - 1];
+    }
+}
+```
+
+
+
+```java
+// 2.2 压缩数组
+class Solution {
+    int [] dp = null;
+    public int climbStairs(int n) {
+        dp = new int[2];
+        return recursion(n);
+    }
+
+    private int recursion(int n) {
+        dp[0] = 1;
+        dp[1] = 2;
+        for (int i = 2; i < n; i++) {
+            dp[i&1] = dp[i - 1 &1] + dp[i - 2&1];
+        }
+        return dp[n - 1&1];
+    }
+}
+```
+
+
+
+#### [120. 三角形最小路径和](https://leetcode-cn.com/problems/triangle/)
+
+todo 
 
 ## week07 动规2、3
 
