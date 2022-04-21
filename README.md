@@ -404,11 +404,7 @@ class Solution {
         return recursion(n - 2) + recursion(n - 1);
     }
 }
-
-
 ```
-
-
 
 ```java
 // 1.2.记忆化搜索
@@ -430,8 +426,6 @@ class Solution {
 }
 ```
 
-
-
 ```java
 class Solution {
     int [] dp = null;
@@ -450,8 +444,6 @@ class Solution {
     }
 }
 ```
-
-
 
 ```java
 // 2.2 压缩数组
@@ -473,13 +465,23 @@ class Solution {
 }
 ```
 
-
-
 #### [120. 三角形最小路径和](https://leetcode-cn.com/problems/triangle/)
 
-todo 
+逐层计算最小路径和 双层for循环
 
 ## week07 动规2、3
+
+#### [279. 完全平方数](https://leetcode-cn.com/problems/perfect-squares/)
+
+#### [55. 跳跃游戏](https://leetcode-cn.com/problems/jump-game/)
+
+#### [45. 跳跃游戏 II](https://leetcode-cn.com/problems/jump-game-ii/)
+
+#### [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/)
+
+#### [124. 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/)
+
+
 
 ## week08 字典树、并查集、图论算法
 
@@ -500,6 +502,12 @@ map存储每个字符的出现次数，循环字符串找出出现次数为1
 两两求最长前缀
 
 [344. 反转字符串](https://leetcode-cn.com/problems/reverse-string/)
+
+#### [151. 颠倒字符串中的单词](https://leetcode-cn.com/problems/reverse-words-in-a-string/)
+
+#### [917. 仅仅反转字母](https://leetcode-cn.com/problems/reverse-only-letters/)
+
+
 
 ## week10 平衡二叉树、跳表、实战技巧、树状数组与线段树
 
