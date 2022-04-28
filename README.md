@@ -2,6 +2,8 @@
 
 ## week01 数组、栈、链表、队列
 
+#### [66. 加一](https://leetcode-cn.com/problems/plus-one/)
+
 [20. 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/) stack
 
 [394. 字符串解码](https://leetcode-cn.com/problems/decode-string/)  stack
@@ -12,17 +14,46 @@
 
 [21. 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
 
+> 合并n个有序链表使用分治
+
 [641. 设计循环双端队列](https://leetcode-cn.com/problems/design-circular-deque/)
 
 [85. 最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/)
 
 [88. 合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/)
 
+> 从大到小放元素，从后往前遍历
+
 [26. 删除有序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
 
 [84. 柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)
 
 [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/)
+
+#### [206. 反转链表](https://leetcode-cn.com/problems/reverse-linked-list/)
+
+> 原链表： `1-> 2-> 3-> 4-> 5-> null`  
+> 
+> 反转之后： `null<- 1<- 3<- 4<- 5`
+
+```java
+class Solution {
+    public ListNode reverseList(ListNode head) {
+       // 上一个节点
+       ListNode last = null;
+       while(head != null) {
+           ListNode nextHead = head.next;
+           head.next = last;
+           // 移动上一个节点
+           last = head;
+           // 移动头结点
+           head = nextHead;
+       }
+        // 最后while训话在head==null退出，这时返回上一个节点即可
+       return last;
+    }
+}
+```
 
 ## week02  哈希表、集合、映射、前缀和、查分、双指针扫描
 
@@ -481,8 +512,6 @@ class Solution {
 
 #### [124. 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/)
 
-
-
 ## week08 字典树、并查集、图论算法
 
 ## week09 字符串处理、高级搜索
@@ -507,8 +536,32 @@ map存储每个字符的出现次数，循环字符串找出出现次数为1
 
 #### [917. 仅仅反转字母](https://leetcode-cn.com/problems/reverse-only-letters/)
 
-
-
 ## week10 平衡二叉树、跳表、实战技巧、树状数组与线段树
 
 ## 刷题路径
+
+#### [1. 两数之和](https://leetcode-cn.com/problems/two-sum/)
+
+> map(k-E, v-index) target-num[i]
+
+#### [15. 三数之和](https://leetcode-cn.com/problems/3sum/)
+
+> 1. 数组排序，为了判重
+> 
+> 2. 结合两数之和
+> 
+> [力扣-NSum](https://leetcode-cn.com/problems/3sum/solution/yi-ge-fang-fa-tuan-mie-by-labuladong/)
+
+#### [973. 最接近原点的 K 个点](https://leetcode-cn.com/problems/k-closest-points-to-origin/)
+
+> 数组排序，取前k个
+
+### 回溯
+
+#### [22. 括号生成](https://leetcode-cn.com/problems/generate-parentheses/)
+
+
+
+#### [51. N 皇后](https://leetcode-cn.com/problems/n-queens/)
+
+> dfs
