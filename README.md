@@ -556,12 +556,46 @@ map存储每个字符的出现次数，循环字符串找出出现次数为1
 
 > 数组排序，取前k个
 
+## 深度优先搜索 dfs
+
+#### [112. 路径总和](https://leetcode-cn.com/problems/path-sum/)
+
+> 使用dfs，
+> 
+> 关键代码： `return dfs(root.left, sum - root.val) || dfs(root.right, sum - root.val);`
+
+#### [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/)
+
+> 1. 从最外围一周dfs，将陆地部分标识出来，这些区域没有被围绕，比如 改为 'Z'
+> 
+> 2. 将剩余区域中的陆地部分找出来标识为围绕
+> 
+> 3. 将第一步中的标识的部分改回陆地标识。
+
+
+
+#### [979. 在二叉树中分配硬币](https://leetcode-cn.com/problems/distribute-coins-in-binary-tree/)
+
+
+
 ### 回溯
 
 #### [22. 括号生成](https://leetcode-cn.com/problems/generate-parentheses/)
 
-
-
 #### [51. N 皇后](https://leetcode-cn.com/problems/n-queens/)
 
 > dfs
+
+
+
+## 分治
+
+#### [973. 最接近原点的 K 个点](https://leetcode-cn.com/problems/k-closest-points-to-origin/)
+
+> 数组排序，取出前k个
+> 
+> 排序可以使用 `Arrays.sort(nums, compare)`  ，可以自己使用分治的方式排序
+
+
+
+## 动态规划
