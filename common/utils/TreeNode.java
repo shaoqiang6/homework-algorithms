@@ -4,8 +4,8 @@ public class TreeNode {
     public int val;
     public TreeNode left;
     public TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
+    public TreeNode() {}
+    public TreeNode(int val) { this.val = val; }
     TreeNode(int val, TreeNode left, TreeNode right) {
         this.val = val;
         this.left = left;
@@ -14,10 +14,10 @@ public class TreeNode {
 
     @Override
     public String toString() {
-        return "TreeNode{" +
+        return "{" +
                 "val=" + val +
-                ", left=" + (left == null ? "null" : left.val) +
-                ", right=" + (right== null ? "null" : right.val) +
+                ", left=" + (left == null ? "null" : left) +
+                ", right=" + (right== null ? "null" : right) +
                 '}';
     }
 
@@ -26,6 +26,13 @@ public class TreeNode {
         TreeNode root = new TreeNode(++val);
         root.left = new TreeNode(++val);
         root.right = new TreeNode(++val);
+        return root;
+    }
+
+    public static TreeNode mockBinarySearchTree(int rootVal) {
+        TreeNode root = new TreeNode(rootVal);
+        root.left = new TreeNode(rootVal - 1);
+        root.right = new TreeNode(rootVal + 1);
         return root;
     }
 }
