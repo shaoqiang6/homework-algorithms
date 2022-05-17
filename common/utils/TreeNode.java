@@ -31,8 +31,13 @@ public class TreeNode {
 
     public static TreeNode mockBinarySearchTree(int rootVal) {
         TreeNode root = new TreeNode(rootVal);
-        root.left = new TreeNode(rootVal - 1);
-        root.right = new TreeNode(rootVal + 1);
+        root.left = new TreeNode(rootVal - 2);
+        root.left.left = new TreeNode(rootVal - 3);
+        root.left.right = new TreeNode(rootVal - 1);
+
+        root.right = new TreeNode(rootVal + 2);
+        root.right.left = new TreeNode(rootVal + 1);
+        root.right.right = new TreeNode(rootVal + 3);
         return root;
     }
 }
