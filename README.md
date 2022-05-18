@@ -605,3 +605,5 @@ map存储每个字符的出现次数，循环字符串找出出现次数为1
 #### [面试题 04.06. 后继者](https://leetcode.cn/problems/successor-lcci/)
 
 > 二叉树中序遍历
+
+#### [953. 验证外星语词典](https://leetcode.cn/problems/verifying-an-alien-dictionary/)
