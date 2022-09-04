@@ -15,19 +15,23 @@ public class TreeNode {
     @Override
     public String toString() {
         return "{" +
-                "val=" + val +
-                ", left=" + (left == null ? "null" : left) +
-                ", right=" + (right== null ? "null" : right) +
+                "\"val\":" + val +
+                (left == null ? "" : ", \"left\":" +  left) +
+                (right == null ? "" : ", \"right\":" + right) +
                 '}';
     }
 
-    public static TreeNode mock() {
+    public static TreeNode mock(int level) {
+        if (level < 1) {
+            return new TreeNode(0);
+        }
         int val = 1;
         TreeNode root = new TreeNode(++val);
-        root.left = new TreeNode(++val);
+        root.left = new TreeNode(++val, mock(level - 1), mock(level - 1));
         root.right = new TreeNode(++val);
         return root;
     }
+
 
     public static TreeNode mockBinarySearchTree(int rootVal) {
         TreeNode root = new TreeNode(rootVal);
